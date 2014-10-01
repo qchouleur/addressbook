@@ -3,6 +3,7 @@
 <%@ attribute name="contact" required="true" type="fr.esiea.addressbook.models.Contact" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="card people" style="margin:auto;margin-top:15px">
 	<div class="card-top blue">
@@ -38,7 +39,10 @@
 			    <td style="width: 70%">
 			    	<a class="title" href="#">${contact.firstName} ${contact.lastName}</a>
 			    	<div class="desc"><i class="fa fa-at" style="margin-right:10px"></i><a href="mailto:${contact.email}">${contact.email}</a></div>
-			    	<div class="desc"><i class="fa fa-birthday-cake" style="margin-right:10px"></i>${contact.dateOfBirth}</div>
+			    	<div class="desc"><i class="fa fa-birthday-cake" style="margin-right:10px"></i>
+			    	<fmt:formatDate value="${contact.dateOfBirth}" var="dateString" pattern="dd/MM/yyyy" />
+			    	${dateString}
+			    	</div>
 			    	<br />
 			    	<br />
 			    	<p align="right"><a href="#" title="Adresses" onclick="window.location ='${pageContext.request.contextPath}/address/${contact.id}'">Adresses ...</a></p>
