@@ -52,7 +52,7 @@ public class AddressController {
 			return ContactController.HOME_REDIRECTION;
 		}
 		
-		model.addAttribute("id", id);
+		model.addAttribute("idC", id);
 		Contact contact = service.getById(contactId);
 		if(contact.getAdresses().isEmpty()) {
 			model.addAttribute("error", messageSource.getMessage("Empty.address.list", null, null));
@@ -65,7 +65,7 @@ public class AddressController {
 	@RequestMapping(value = "create/{contactId}", method = RequestMethod.GET)
 	public ModelAndView create(@PathVariable(value = "contactId") String id, ModelMap model) {
 		
-		model.addAttribute("id", id);
+	model.addAttribute("idC", id);
 		
 		return new ModelAndView("address/create", "address", new Address());
 	}
@@ -99,7 +99,7 @@ public class AddressController {
 		Address address = contact.getAddressById(Id.fromString(aId));
 
 		ModelAndView model = new ModelAndView("address/edit", "address", address);
-		model.addObject("id", idContact);
+		model.addObject("idC", idContact);
 		
 		return address != null ?  model : ContactController.HOME_REDIRECTION;
 	}

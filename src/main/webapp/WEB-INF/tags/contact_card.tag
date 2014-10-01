@@ -45,7 +45,11 @@
 			    	</div>
 			    	<br />
 			    	<br />
-			    	<p align="right"><a href="#" title="Adresses" onclick="window.location ='${pageContext.request.contextPath}/address/${contact.id}'">Adresses ...</a></p>
+			    	<p align="right">
+			    		<a href="#" title="Adresses" onclick="window.location ='${pageContext.request.contextPath}/address/${contact.id}'">
+			    			<i class="fa fa-chevron-right fa-2x"></i>
+						</a>
+					</p>
 			    </td>
 		    </tr>	
 	    </table>

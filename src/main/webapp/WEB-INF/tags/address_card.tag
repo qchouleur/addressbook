@@ -6,7 +6,7 @@
     	<a href="#">
     		<img src="assets/img/silhouette_homer.png" alt=""/>
     	</a>
-    	<form name="remove" class="pull-right" method="post" action="${pageContext.request.contextPath}/address/delete/${id}/${address.id}">
+    	<form name="remove" class="pull-right" method="post" action="${pageContext.request.contextPath}/address/delete/${idC}/${address.id}">
 				<button class="btn btn-default navbar-btn" title="Supprimer l'adresse" type="submit">
 					<i class="fa fa-close"></i>
 				</button>
@@ -14,7 +14,7 @@
 
 			<button class="btn btn-default navbar-btn pull-right"
 				title="Edition"
-				onclick="window.location ='${pageContext.request.contextPath}/address/edit/${id}/${address.id}'">
+				onclick="window.location ='${pageContext.request.contextPath}/address/edit/${idC}/${address.id}'">
 				<i class="fa fa-cog"></i>
 			</button>
     </div>
@@ -22,10 +22,16 @@
     <table>
     <tr>
     <td>
+    </td>
+    <td>
+    	 <div class="desc" style="font-size:xx-small;"><strong>${address.alias}</strong></div>
+    </td>
+    </tr>
+    <tr>
+    <td>
     	<a class="title" href="#"><i class="fa fa-envelope" style="margin-right:10px"></i></a><br>
     </td>
     <td>
-    	${address.alias}
     	<div class="desc">${address.number} ${address.street}</div>
 		<div class="desc">${address.zipcode} ${address.city}</div>
 	</td>
