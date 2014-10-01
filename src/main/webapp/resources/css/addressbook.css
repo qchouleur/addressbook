@@ -1,0 +1,21 @@
+.error {
+	color: #D8000C;
+}
+.card.address{position:relative;display:inline-block;width:230px;height:130px;padding-top:0;margin-left:20px;overflow:hidden;vertical-align:top}
+
+.card.address:first-child{margin-left:0}
+
+.card.address .card-top{position:absolute;top:0;left:0;display:inline-block;width:230px;height:30px;background-color:#fff}
+
+.card.address .card-top.green{background-color:#53a93f}
+
+.card.address .card-top.blue{background-color:#427fed}
+
+.card.address .card-info{position:absolute;top:50px;display:inline-block;width:100%;height:100px;overflow:hidden;background:#fff;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+.card.address .card-info .title{display:block;margin:8px 14px 0 14px;overflow:hidden;font-size:16px;font-weight:bold;line-height:18px;color:#404040}
+
+.card.address .card-info .desc{display:block;margin:8px 14px 0 14px;overflow:hidden;font-size:12px;line-height:16px;color:#737373;text-overflow:ellipsis}
+
+.card.address .card-bottom{position:absolute;bottom:0;left:0;display:inline-block;width:100%;padding:10px 20px;line-height:29px;text-align:center;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
