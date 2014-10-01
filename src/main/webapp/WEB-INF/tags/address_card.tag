@@ -25,6 +25,7 @@
     	<a class="title" href="#"><i class="fa fa-envelope" style="margin-right:10px"></i></a><br>
     </td>
     <td>
+    	${address.alias}
     	<div class="desc">${address.number} ${address.street}</div>
 		<div class="desc">${address.zipcode} ${address.city}</div>
 	</td>

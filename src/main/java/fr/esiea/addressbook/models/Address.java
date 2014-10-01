@@ -7,6 +7,9 @@ public class Address {
 	private Id id;
 	
 	@NotEmpty
+	private String alias;
+	
+	@NotEmpty
 	private String number;
 	
 	@NotEmpty
@@ -20,16 +23,25 @@ public class Address {
 	
 	public Address(){}
 	
-	public Address(String number, String street, String zipcode, String city)
+	public Address(String alias, String number, String street, String zipcode, String city)
 	{
 		this.id = Id.generate();
-
+		
+		this.alias = alias;
 		this.number = number;
 		this.street = street;
 		this.zipcode = zipcode;
 		this.city = city;
 	}
 	
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
 	public String getNumber() {
 		return number;
 	}

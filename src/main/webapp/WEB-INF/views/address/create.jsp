@@ -26,7 +26,7 @@
 	<div class="container" style="margin-top:50px">
 		<form:form action="${pageContext.request.contextPath}/address/create/fr.esiea.addresbook:addressbook:war:1.0-SNAPSHOT" method="POST" class="form-horizontal" commandName="address">
 	    	<fieldset>
-	    		
+	    		<tags:form_field label="Alias" name="alias" placeholder="Alias" path="alias"/>
 	    		<tags:form_field label="Numéro" name="number" placeholder="Numéro" path="number"/>
 	    		<tags:form_field label="Rue" name="street" placeholder="Rue" path="street"/>
 	    		<tags:form_field label="Code postale" name="zipcode" placeholder="Code postale" path="zipcode"/>
