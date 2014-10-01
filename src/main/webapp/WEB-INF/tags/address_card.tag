@@ -6,7 +6,7 @@
     	<a href="#">
     		<img src="assets/img/silhouette_homer.png" alt=""/>
     	</a>
-    	<form name="remove" class="pull-right" method="post" action="${pageContext.request.contextPath}/address/delete/fr.esiea.addresbook:addressbook:war:1.0-SNAPSHOT/${address.id}">
+    	<form name="remove" class="pull-right" method="post" action="${pageContext.request.contextPath}/address/delete/${id}/${address.id}">
 				<button class="btn btn-default navbar-btn" title="Supprimer l'adresse" type="submit">
 					<i class="fa fa-close"></i>
 				</button>
@@ -14,7 +14,7 @@
 
 			<button class="btn btn-default navbar-btn pull-right"
 				title="Edition"
-				onclick="window.location ='${pageContext.request.contextPath}/address/edit/fr.esiea.addresbook:addressbook:war:1.0-SNAPSHOT/${address.id}'">
+				onclick="window.location ='${pageContext.request.contextPath}/address/edit/${id}/${address.id}'">
 				<i class="fa fa-cog"></i>
 			</button>
     </div>

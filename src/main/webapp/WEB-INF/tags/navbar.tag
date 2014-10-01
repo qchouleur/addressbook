@@ -4,7 +4,7 @@
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="${pageContext.request.contextPath}"><i class="fa fa-book"></i>  AddressBook</a>
+			<a class="brand" href="${pageContext.request.contextPath}/"><i class="fa fa-book"></i>  AddressBook</a>
 			<button class="btn btn-default navbar-btn pull-right" style="margin-top:5px;min-height:35px" 
 					title="Ajouter un nouveau contact" onclick="window.location ='${pageContext.request.contextPath}/contact/create'">
 				<i class="fa fa-plus fa-2x"></i>
