@@ -65,4 +65,4 @@ hs_err_pid*
 
 # 
 /WEB-INF/classes
-
+/WEB-INF/lib
