@@ -24,7 +24,7 @@
 		<tags:navbar search_action="${pageContext.request.contextPath}/address"/>
 
 	<div class="container" style="margin-top:50px">
-		<form:form action="${pageContext.request.contextPath}/address/create/fr.esiea.addresbook:addressbook:war:1.0-SNAPSHOT" method="POST" class="form-horizontal" commandName="address">
+		<form:form action="${pageContext.request.contextPath}/address/create/${id}" method="POST" class="form-horizontal" commandName="address">
 	    	<fieldset>
 	    		
 	    		<tags:form_field label="Numéro" name="number" placeholder="Numéro" path="number"/>
