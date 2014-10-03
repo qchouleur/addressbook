@@ -131,4 +131,17 @@ public class Contact {
 		if(addressToDel != null)
 			this.addresses.remove(addressToDel);
 	}
+	
+	public List<Address> getAddressQuery(String query)
+	{
+		List<Address> addressList = new ArrayList<Address>();
+		
+		for(Address address : this.addresses)
+		{
+			if(address.getAlias().contains(query))
+					addressList.add(address);
+		}
+		
+		return addressList;
+	}
 }

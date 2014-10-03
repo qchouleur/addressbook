@@ -1,5 +1,7 @@
 package fr.esiea.addressbook.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -21,6 +24,7 @@ import fr.esiea.addressbook.models.Address;
 import fr.esiea.addressbook.models.Contact;
 import fr.esiea.addressbook.models.Id;
 import fr.esiea.addressbook.services.ContactService;
+import fr.esiea.addressbook.specifications.NameContainsKeywordSpecification;
 
 
 @Controller
@@ -37,6 +41,37 @@ public class AddressController {
 		// Mandatory, otherwise the contact model validation keep 
 		// failing because of string to Id conversion
 		binder.setDisallowedFields("id");
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView index(
+			@RequestParam(value = "q", required = false) String query,
+			@RequestParam(value = "idC", required = false) String id,
+			RedirectAttributes redirectAttributes,
+			ModelMap model) {
+
+		
+		Id contactId = Id.fromString(id);
+		
+		if(!service.exists(contactId)) {
+			redirectAttributes.addFlashAttribute("error",messageSource.getMessage("Invalid.contact.id", null, null));
+			return new ModelAndView("address/list");
+		}
+		
+		Contact contact = service.getById(contactId);
+		
+		List<Address> results = contact.getAddressQuery(query);
+		model.addAttribute("address", results);
+				
+		if(results.isEmpty()) {
+			model.addAttribute("error", messageSource.getMessage("Empty.address.list", null, null));
+		}
+		
+		ModelAndView newModel = new ModelAndView("address/list", "addresses", results);
+		newModel.addObject("idC",contactId);
+		
+		return newModel;
+
 	}
 	
 	

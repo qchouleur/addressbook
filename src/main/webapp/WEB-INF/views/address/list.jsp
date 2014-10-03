@@ -21,7 +21,7 @@
     		
     	</head>
     	<body style="padding-top:50px">
-		<tags:navbar search_action="${pageContext.request.contextPath}/address"/>
+		<tags:navbarAddress search_action="${pageContext.request.contextPath}/address"/>
     	
     	<div class="container">
 			<c:if test="${error!=null}"><div class="alert alert-error">${error}</div></c:if>

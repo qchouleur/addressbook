@@ -19,10 +19,9 @@
     		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootplus-ie7.min.css">
     		<![endif]-->
     		
-    		
 		</head>
 	<body style="padding-top:50px">
-		<tags:navbar search_action="${pageContext.request.contextPath}"/>
+		<tags:navbarAddress search_action="${pageContext.request.contextPath}"/>
 
 	<div class="container" style="margin-top:50px">
 		<form:form action="${pageContext.request.contextPath}/address/edit/${idC}/${address.id}" class="form-horizontal" commandName="address">

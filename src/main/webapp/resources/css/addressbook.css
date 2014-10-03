@@ -1,7 +1,7 @@
 .error {
 	color: #D8000C;
 }
-.card.address{position:relative;display:inline-block;width:230px;height:130px;padding-top:0;margin-left:20px;overflow:hidden;vertical-align:top}
+.card.address{position:relative;display:inline-block;width:230px;height:160px;padding-top:0;margin-left:20px;overflow:hidden;vertical-align:top}
 
 .card.address:first-child{margin-left:0}
 
