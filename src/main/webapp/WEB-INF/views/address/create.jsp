@@ -24,7 +24,7 @@
 		<tags:navbarAddress search_action="${pageContext.request.contextPath}/address"/>
 
 	<div class="container" style="margin-top:50px">
-		<form:form action="${pageContext.request.contextPath}/address/create/${idC}" method="POST" class="form-horizontal" commandName="address">
+		<form:form action="${pageContext.request.contextPath}/address/create/${contactId}" method="POST" class="form-horizontal" commandName="address">
 	    	<fieldset>
 	    		<tags:form_field label="Alias" name="alias" placeholder="Alias" path="alias"/>
 	    		<tags:form_field label="Numéro" name="number" placeholder="Numéro" path="number"/>

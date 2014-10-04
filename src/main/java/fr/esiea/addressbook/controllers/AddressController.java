@@ -46,7 +46,7 @@ public class AddressController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView index(
 			@RequestParam(value = "q", required = false) String query,
-			@RequestParam(value = "idC", required = false) String id,
+			@RequestParam(value = "id", required = false) String id,
 			RedirectAttributes redirectAttributes,
 			ModelMap model) {
 
@@ -68,7 +68,7 @@ public class AddressController {
 		}
 		
 		ModelAndView newModel = new ModelAndView("address/list", "addresses", results);
-		newModel.addObject("idC",contactId);
+		newModel.addObject("contactId",contactId);
 		
 		return newModel;
 
@@ -87,7 +87,7 @@ public class AddressController {
 			return ContactController.HOME_REDIRECTION;
 		}
 		
-		model.addAttribute("idC", id);
+		model.addAttribute("contactId", id);
 		Contact contact = service.getById(contactId);
 		if(contact.getAdresses().isEmpty()) {
 			model.addAttribute("error", messageSource.getMessage("Empty.address.list", null, null));
@@ -100,7 +100,7 @@ public class AddressController {
 	@RequestMapping(value = "create/{contactId}", method = RequestMethod.GET)
 	public ModelAndView create(@PathVariable(value = "contactId") String id, ModelMap model) {
 		
-	model.addAttribute("idC", id);
+		model.addAttribute("contactId", id);
 		
 		return new ModelAndView("address/create", "address", new Address());
 	}
@@ -112,6 +112,7 @@ public class AddressController {
 			BindingResult result, ModelMap model) {
 
 		if (result.hasErrors()) {
+			model.addAttribute("contactId", id);
 			return new ModelAndView("address/create");
 		}
 
@@ -134,7 +135,7 @@ public class AddressController {
 		Address address = contact.getAddressById(Id.fromString(aId));
 
 		ModelAndView model = new ModelAndView("address/edit", "address", address);
-		model.addObject("idC", idContact);
+		model.addObject("contactId", idContact);
 		
 		return address != null ?  model : ContactController.HOME_REDIRECTION;
 	}
