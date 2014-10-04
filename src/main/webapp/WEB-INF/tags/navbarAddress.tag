@@ -13,6 +13,10 @@
 				<input type="text"class="search-query" style="margin:2px" placeholder="recherche adresse..." name="q">
 				<input name="id" value="${contactId}" hidden="true">
 				<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+				<button class="btn btn-default navbar-btn pull-right" style="margin-top:2px;min-height:35px" 
+					title="Rechercher">
+					<i class="fa fa-search fa-2x"></i>
+				</button>
 			</form>
 		</div>
 	</div>
