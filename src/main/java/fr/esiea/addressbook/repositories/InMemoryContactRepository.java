@@ -9,6 +9,7 @@ import fr.esiea.addressbook.models.Contact;
 import fr.esiea.addressbook.models.Id;
 import fr.esiea.addressbook.services.ContactRepository;
 import fr.esiea.addressbook.services.ContactSpecification;
+import fr.esiea.addressbook.specifications.ActiveSpecification;
 
 public class InMemoryContactRepository implements ContactRepository {
 
@@ -36,7 +37,7 @@ public class InMemoryContactRepository implements ContactRepository {
 
 	public void remove(Id id) {
 		if(datasource.containsKey(id)) {
-			datasource.remove(id);
+			this.get(id).setActive(false);
 		}
 	}
 
@@ -48,7 +49,7 @@ public class InMemoryContactRepository implements ContactRepository {
 		
 		List<Contact> results = new ArrayList<Contact>();
 		
-		for(Contact contact : this.all()) {
+		for(Contact contact : this.datasource.values()) {
 			if(specification.isSatisfiedBy(contact)) {
 				results.add(contact);
 			}
@@ -59,7 +60,7 @@ public class InMemoryContactRepository implements ContactRepository {
 	
 	public List<Contact> all() {
 		
-		return new ArrayList<Contact>(this.datasource.values());
+		return this.find(new ActiveSpecification());
 	}
 
 }

@@ -24,6 +24,8 @@ import fr.esiea.addressbook.data.StaticContactDataStorage;
 import fr.esiea.addressbook.models.Contact;
 import fr.esiea.addressbook.models.Id;
 import fr.esiea.addressbook.services.ContactService;
+import fr.esiea.addressbook.specifications.ActiveSpecification;
+import fr.esiea.addressbook.specifications.ComplexSpecification;
 import fr.esiea.addressbook.specifications.NameContainsKeywordSpecification;
 
 @Controller
@@ -50,7 +52,9 @@ public class ContactController {
 			ModelMap model) {
 
 		List<Contact> results =  (query == null || query.isEmpty()) ? 
-				service.all() : service.find(new NameContainsKeywordSpecification(query));
+				service.all() : 
+				service.find(new ComplexSpecification(new NameContainsKeywordSpecification(query), new ActiveSpecification()));
+				
 		model.addAttribute("contacts", results);
 				
 		if(results.isEmpty()) {

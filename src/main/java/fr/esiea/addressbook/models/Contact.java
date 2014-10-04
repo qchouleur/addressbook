@@ -36,6 +36,10 @@ public class Contact {
 	private ArrayList<Address> addresses = new ArrayList<Address>();
 	
 	public Contact() {
+	
+		this.id = Id.generate();
+		
+		this.active = true;
 		
 	}
 	
@@ -43,6 +47,7 @@ public class Contact {
 		
 		this.id = Id.generate();
 		
+		this.active = true;
 		this.lastName = name;
 		this.firstName = firstname;
 		this.email = email;
