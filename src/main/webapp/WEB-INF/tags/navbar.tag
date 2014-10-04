@@ -9,9 +9,13 @@
 					title="Ajouter un nouveau contact" onclick="window.location ='${pageContext.request.contextPath}/contact/create'">
 				<i class="fa fa-plus fa-2x"></i>
 			</button>
-			<form class="navbar-search pull-right" method="get" action="${search_action}">
+			<form class="navbar-search pull-right" method="get" action="${search_action}" style="margin-right: 20px">
 				<input type="text"class="search-query" style="margin:2px" placeholder="recherche contact..." name="q">
 				<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+				<button class="btn btn-default navbar-btn pull-right" style="margin-top:2px;min-height:35px" 
+					title="Rechercher">
+				<i class="fa fa-search fa-2x"></i>
+			</button>
 			</form>
 		</div>
 	</div>
