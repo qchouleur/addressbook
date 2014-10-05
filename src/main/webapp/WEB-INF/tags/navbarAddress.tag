@@ -9,7 +9,7 @@
 					title="Ajouter une nouvelle address" onclick="window.location ='${pageContext.request.contextPath}/address/create/${contactId}'">
 				<i class="fa fa-plus fa-2x"></i>
 			</button>
-			<form class="navbar-search pull-right" method="get" action="${search_action}">
+			<form class="navbar-search pull-right" method="get" action="${search_action}" style="margin-right: 20px">
 				<input type="text"class="search-query" style="margin:2px" placeholder="recherche adresse..." name="q">
 				<input name="id" value="${contactId}" hidden="true">
 				<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
