@@ -29,9 +29,7 @@ Simple contact manager that enables you to store and find your contact informati
 
 ####DESCRIPTION
 
-Nous avons réalisé une application qui gère des contactes avec leurs adresses (livraison et facturation). Pour se faire, nous avons utilisé le framework Spring MVC
-
-et avons déployé l'application sur Google AppEngine (URL: addressbook-esiea.appspot.com).
+Nous avons réalisé une application qui gère des contactes avec leurs adresses (livraison et facturation). Pour se faire, nous avons utilisé le framework Spring MVC et avons déployé l'application sur Google AppEngine (URL: addressbook-esiea.appspot.com).
 
 L'application dispose de deux IHM, un pour les contacts et l'autre pour les adresses qui se traduisent par deux contrôleurs ainsi que de 6 pages JSP.
 
