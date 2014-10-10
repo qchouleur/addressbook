@@ -11,6 +11,8 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import fr.esiea.addressbook.controllers.ContactController;
+
 public class Contact {
 	
 	
@@ -148,5 +150,25 @@ public class Contact {
 		}
 		
 		return addressList;
+	}
+	
+	public boolean checkBillsAddressAlreadyExist(Address address)
+	{
+		if(address.getAlias().equals("Facturation") && !this.getAdresses().isEmpty())
+		{
+			for(Address addr: this.getAdresses())
+			{
+				if(!(addr.getAlias() == "Facturation"))
+				{
+					return true;
+				}
+			}
+		}
+		else
+		{
+			return false;
+		}
+		
+		return false;
 	}
 }

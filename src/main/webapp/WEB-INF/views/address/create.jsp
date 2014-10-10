@@ -26,7 +26,20 @@
 	<div class="container" style="margin-top:50px">
 		<form:form action="${pageContext.request.contextPath}/address/create/${contactId}" method="POST" class="form-horizontal" commandName="address">
 	    	<fieldset>
-	    		<tags:form_field label="Alias" name="alias" placeholder="Alias" path="alias"/>
+	    		<table style="margin-left: 130px">
+	    			<tr>
+	    				<td>
+	    					<label style="text-align: center;">Alias</label>
+	    				</td>
+	    				<td>
+				    		<SELECT style="margin-left: 20px; margin-bottom: 15px" name="alias" size="1">
+								<OPTION>Facturation</OPTION>
+								<OPTION>Livraison</OPTION>
+							</SELECT>
+						</td>
+					</tr>
+				</table>
+	    		<!--<tags:form_field label="Alias" name="alias" placeholder="Alias" path="alias"/>-->
 	    		<tags:form_field label="Numéro" name="number" placeholder="Numéro" path="number"/>
 	    		<tags:form_field label="Rue" name="street" placeholder="Rue" path="street"/>
 	    		<tags:form_field label="Code postal" name="zipcode" placeholder="Code postal" path="zipcode"/>

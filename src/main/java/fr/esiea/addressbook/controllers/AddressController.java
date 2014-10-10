@@ -109,7 +109,8 @@ public class AddressController {
 	public ModelAndView create(
 			@PathVariable(value = "contactId") String id,
 			@ModelAttribute("address") @Valid Address address,
-			BindingResult result, ModelMap model) {
+			BindingResult result, ModelMap model,
+			RedirectAttributes redirectAttributes) {
 
 		if (result.hasErrors()) {
 			model.addAttribute("contactId", id);
@@ -119,8 +120,19 @@ public class AddressController {
 		Id idContact = Id.fromString(id);
 		address.setId(Id.generate());
 		Contact contact = service.getById(idContact);
-		contact.addAddress(address);
-
+		
+		boolean res = contact.checkBillsAddressAlreadyExist(address);
+		
+		if(res)
+		{
+			redirectAttributes.addFlashAttribute("error",messageSource.getMessage("Invalid.address.facturation", null, null));
+			return ContactController.HOME_REDIRECTION;
+		}
+		else
+		{
+			contact.addAddress(address);
+		}
+		
 		return ContactController.HOME_REDIRECTION;
 	}
 	
