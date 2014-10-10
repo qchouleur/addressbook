@@ -39,6 +39,8 @@ L'application dispose de deux IHM, un pour les contacts et l'autre pour les adre
 
 ![Alt text](/src/main/webapp/resources/screenshots/desc_contact.png?raw=true "Contacts")
 
+![Alt text](/src/main/webapp/resources/screenshots/desc_address.png?raw=true "Addresses")
+
 ###Spring MVC
 
 « SPRING est effectivement un conteneur dit “ léger ”, c’est-à-dire une infrastructure similaire à un serveur d'applications J2EE. Il prend donc en charge la création d’objets et la mise en relation d’objets par l’intermédiaire d’un fichier de configuration qui décrit les objets à fabriquer et les relations de dépendances entre ces objets. Le gros avantage par rapport aux serveurs d’application est qu’avec SPRING, les classes n’ont pas besoin d’implémenter une quelconque interface pour être prises en charge par le framework (au contraire des serveur d'applications J2EE et des EJBs). C’est en ce sens que SPRING est qualifié de conteneur “ léger ”. »
