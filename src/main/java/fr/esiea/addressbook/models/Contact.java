@@ -35,7 +35,7 @@ public class Contact {
 	
 	private boolean active;
 	
-	private ArrayList<Address> addresses = new ArrayList<Address>();
+	private List<Address> addresses = new ArrayList<Address>();
 	
 	public Contact() {
 	
@@ -113,6 +113,14 @@ public class Contact {
 		this.firstName = contact.firstName;
 		this.email = contact.email;
 		this.dateOfBirth = contact.dateOfBirth;
+	}
+	
+	public List<Address> getAddresses() {
+		return this.addresses;
+	}
+	
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 	
 	public Address getAddressById(Id id)
