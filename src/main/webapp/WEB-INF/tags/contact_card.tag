@@ -45,11 +45,13 @@
 			    	</div>
 			    	<br />
 			    	<br />
-			    	<p align="right">
-			    		<a href="#" title="Adresses" onclick="window.location ='${pageContext.request.contextPath}/address/${contact.id}'">
-			    			<i class="fa fa-chevron-right fa-2x"></i>
-						</a>
-					</p>
+			    	<c:if test="${not empty contact.addresses}">	
+			    		<p align="right">
+			    			<a href="#" title="Adresses" onclick="window.location ='${pageContext.request.contextPath}/address/${contact.id}'">
+			    				<i class="fa fa-chevron-right fa-2x"></i>
+							</a>
+						</p>
+					</c:if>
 			    </td>
 		    </tr>	
 	    </table>
