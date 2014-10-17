@@ -158,7 +158,7 @@ public class Contact {
 		{
 			for(Address addr: this.getAdresses())
 			{
-				if(!(addr.getAlias() == "Facturation"))
+				if(addr.getAlias().equals("Facturation"))
 				{
 					return true;
 				}

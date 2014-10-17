@@ -28,9 +28,9 @@ public class StaticContactDataStorage {
 		datasource.put(bob.getId(), bob);
 		bob = new Contact("Hazard", "Eden", "hazard@rhyta.com", new Date());
 		datasource.put(bob.getId(), bob);
-		bob = new Contact("Zinedine", "Zidane", "zidane@rhyta.com", new Date());
+		bob = new Contact("Zidane", "Zinedine", "zidane@rhyta.com", new Date());
 		datasource.put(bob.getId(), bob);
-		bob = new Contact("Cristiano", "Ronaldo", "ronaldo@rhyta.com", new Date());
+		bob = new Contact("Ronaldo", "Cristiano", "ronaldo@rhyta.com", new Date());
 
 		datasource.put(bob.getId(), bob);
 
