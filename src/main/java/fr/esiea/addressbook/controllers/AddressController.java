@@ -126,14 +126,16 @@ public class AddressController {
 		if(res)
 		{
 			redirectAttributes.addFlashAttribute("error",messageSource.getMessage("Invalid.address.facturation", null, null));
-			return ContactController.HOME_REDIRECTION;
+			return new ModelAndView(
+					"redirect:/address/"+idContact);
 		}
 		else
 		{
 			contact.addAddress(address);
 		}
 		
-		return ContactController.HOME_REDIRECTION;
+		return new ModelAndView(
+				"redirect:/address/"+idContact);
 	}
 	
 	
@@ -149,7 +151,7 @@ public class AddressController {
 		ModelAndView model = new ModelAndView("address/edit", "address", address);
 		model.addObject("contactId", idContact);
 		
-		return address != null ?  model : ContactController.HOME_REDIRECTION;
+		return address != null ?  model : new ModelAndView("redirect:/address/"+idContact);
 	}
 
 	@RequestMapping(value = "/edit/{contactId}/{addressId}", method = RequestMethod.POST)
@@ -178,7 +180,8 @@ public class AddressController {
 		address.setId(addressId);
 		contact.addAddress(address);
 		
-		return ContactController.HOME_REDIRECTION;
+		return new ModelAndView(
+				"redirect:/address/"+contactId);
 	}
 	
 	@RequestMapping(value = "/delete/{contactId}/{addressId}", method = RequestMethod.POST)
@@ -198,6 +201,7 @@ public class AddressController {
 		Contact contact = service.getById(contactId);
 		contact.deleteAddressById(addressId);
 		
-		return ContactController.HOME_REDIRECTION;
+		return new ModelAndView(
+				"redirect:/address/"+contactId);
 	}
 }
